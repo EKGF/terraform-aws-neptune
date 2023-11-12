@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [0.0.3](https://github.com/EKGF/terraform-neptune/compare/0.0.2..0.0.3) - 2023-11-12
+#### Continuous Integration
+- **(docs)** updated docs - ([f95b0ad](https://github.com/EKGF/terraform-neptune/commit/f95b0adf762bc8621d33f6bd88529049a02dd679)) - [@jgeluk](https://github.com/jgeluk)
+
+- - -
+
 ## [0.0.2](https://github.com/EKGF/terraform-neptune/compare/0.0.1..0.0.2) - 2023-11-12
 #### Continuous Integration
 - **(docs)** updated docs, renamed repo - ([b7768d1](https://github.com/EKGF/terraform-neptune/commit/b7768d13829fdcf723a3bd2d5079fa36d07e7440)) - [@jgeluk](https://github.com/jgeluk)
