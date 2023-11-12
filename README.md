@@ -1,4 +1,4 @@
-# Terraform Neptune
+# Terraform AWS Neptune
 
 Set up AWS Neptune with Terraform.
 
@@ -12,7 +12,8 @@ For instance, in your own project, you can add Neptune support by adding the fol
 
 ```hcl
 module "neptune_staging" {
-  source                   = "github.com/EKGF/terraform-neptune"
+  source                   = "EKGF/terraform-aws-neptune"
+  version                  = "0.0.1"
   name                     = "staging"
   org_short                = var.org_short
   project_short            = var.project_short
