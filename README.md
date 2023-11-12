@@ -12,8 +12,8 @@ For instance, in your own project, you can add Neptune support by adding the fol
 
 ```hcl
 module "neptune_staging" {
-  source                   = "EKGF/terraform-aws-neptune"
-  version                  = "0.0.1"
+  source                   = "EKGF/neptune/aws"
+  version                  = "0.0.3"
   name                     = "staging"
   org_short                = var.org_short
   project_short            = var.project_short
@@ -30,3 +30,8 @@ module "neptune_staging" {
   port                     = var.neptune_port
 }
 ```
+
+## Other documentation
+
+- [Other EKGF Terraform modules](https://registry.terraform.io/namespaces/EKGF)
+- [Generated documentation for this module](https://registry.terraform.io/modules/EKGF/neptune/aws/latest) 
