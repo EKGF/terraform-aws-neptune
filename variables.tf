@@ -104,7 +104,7 @@ variable "engine_version" {
 variable "parameter_group_family" {
   type        = string
   description = "Neptune parameter group family"
-  default     = "neptune1.2"
+  default     = "neptune1.3"
 }
 
 variable "port" {
