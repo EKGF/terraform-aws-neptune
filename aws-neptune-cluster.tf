@@ -31,7 +31,7 @@ resource "aws_neptune_cluster" "cluster" {
 
   serverless_v2_scaling_configuration {
     max_capacity = 4
-    min_capacity = 2
+    min_capacity = 1
   }
 
   timeouts {
