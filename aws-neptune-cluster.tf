@@ -9,7 +9,7 @@ resource "aws_neptune_cluster" "cluster" {
   #
   # The name of the cluster cannot be longer than 20 characters, see aws-sagemaker-notebook.tf
   #
-  cluster_identifier                   = "${local.stack}-${var.name}"
+  cluster_identifier                   = local.stack
   availability_zones                   = var.aws_availability_zones
   engine                               = var.engine
   engine_version                       = var.engine_version
@@ -20,7 +20,7 @@ resource "aws_neptune_cluster" "cluster" {
   apply_immediately                    = true
   allow_major_version_upgrade          = true
   copy_tags_to_snapshot                = true
-  enable_cloudwatch_logs_exports       = ["audit"]
+  enable_cloudwatch_logs_exports       = ["audit", "slowquery"]
   neptune_cluster_parameter_group_name = aws_neptune_cluster_parameter_group.cluster.name
   iam_roles                            = [aws_iam_role.neptune_role.arn]
   neptune_subnet_group_name            = aws_neptune_subnet_group.digital_twin.name
@@ -30,14 +30,18 @@ resource "aws_neptune_cluster" "cluster" {
   kms_key_arn                          = aws_kms_key.cluster_key.arn
 
   serverless_v2_scaling_configuration {
-    max_capacity = 4
-    min_capacity = 1
+    max_capacity = 4.0
+    min_capacity = 1.0
   }
 
   timeouts {
     create = "60m"
     delete = "2h"
   }
+
+  depends_on = [
+    aws_neptune_cluster_parameter_group.cluster,
+  ]
 
   tags = local.default_tags
 }

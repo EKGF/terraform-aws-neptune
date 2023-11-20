@@ -1,6 +1,6 @@
 resource "aws_iam_role" "neptune_role" {
   provider             = aws.neptune
-  name                 = "${local.stack}-neptune-${var.name}"
+  name                 = "${local.stack}-neptune"
   path                 = local.path
   permissions_boundary = local.permissions_boundary
   assume_role_policy   = <<EOF

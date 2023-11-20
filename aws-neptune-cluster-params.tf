@@ -1,8 +1,8 @@
 resource "aws_neptune_cluster_parameter_group" "cluster" {
   provider    = aws.neptune
   family      = var.parameter_group_family
-  name        = "${local.stack}-${var.name}-cluster"
-  description = "neptune cluster parameter group (${var.name})"
+  name        = "${local.stack}-cluster"
+  description = "neptune cluster parameter group (${var.name})" # changing this description forces replacement!!
 
   parameter {
     name         = "neptune_enable_audit_log"

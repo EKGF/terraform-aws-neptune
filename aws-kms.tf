@@ -1,6 +1,6 @@
 resource "aws_kms_key" "cluster_key" {
   provider                 = aws.neptune
-  description              = "${local.stack}-neptune-${var.name}"
+  description              = "${local.stack}-neptune"
   deletion_window_in_days  = 7
   key_usage                = "ENCRYPT_DECRYPT"
   customer_master_key_spec = "SYMMETRIC_DEFAULT"
@@ -10,7 +10,7 @@ resource "aws_kms_key" "cluster_key" {
 
 resource "aws_kms_alias" "cluster_key" {
   provider      = aws.neptune
-  name_prefix   = "alias/${local.stack}-neptune-${var.name}-"
+  name_prefix   = "alias/${local.stack}-neptune-"
   target_key_id = aws_kms_key.cluster_key.key_id
 }
 
@@ -51,7 +51,6 @@ data aws_iam_policy_document "neptune_cluster_key_policy" {
       type        = "AWS"
       identifiers = [
         "arn:aws:iam::${var.aws_account_id}:root",
-        local.arn_ci_neptune,
       ]
     }
   }
@@ -69,7 +68,7 @@ data aws_iam_policy_document "neptune_cluster_key_policy" {
     principals {
       type        = "AWS"
       identifiers = [
-        local.arn_ci_neptune
+        "arn:aws:iam::${var.aws_account_id}:root",
       ]
     }
   }
@@ -85,7 +84,7 @@ data aws_iam_policy_document "neptune_cluster_key_policy" {
     principals {
       type        = "AWS"
       identifiers = [
-        local.arn_ci_neptune,
+        "arn:aws:iam::${var.aws_account_id}:root",
       ]
     }
     resources = ["*"]

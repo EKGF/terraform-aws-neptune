@@ -9,7 +9,6 @@ variable "enabled" {
 variable "name" {
   type        = string
   description = "Logical short name of the cluster e.g. 'staging' or 'primary'"
-  default     = "staging"
 }
 
 variable "org_short" {
@@ -59,6 +58,11 @@ variable "environment" {
   default     = "dev"
 }
 
+variable "vpc_id" {
+  type        = string
+  description = "ID of existing VPC to deploy into"
+}
+
 variable "vpc_name" {
   type        = string
   description = "base of names for the deployed VPC assets (mandatory)"
@@ -68,12 +72,6 @@ variable "vpc_name" {
 variable "subnet_ids" {
   type        = list(string)
   description = "subnet ids to be used for neptune cluster"
-  default     = null
-}
-
-variable "security_group_ids" {
-  type        = list(string)
-  description = "security group ids to be used for neptune cluster"
   default     = null
 }
 
@@ -98,13 +96,19 @@ variable "engine" {
 variable "engine_version" {
   type        = string
   description = "Neptune engine version"
-  default     = "1.3.0.0"
+  default     = "1.2.1.0"
+}
+
+variable "load_buckets" {
+  type        = list(string)
+  description = "List of S3 buckets to load data from"
+  default     = []
 }
 
 variable "parameter_group_family" {
   type        = string
   description = "Neptune parameter group family"
-  default     = "neptune1.3"
+  default     = "neptune1.2"
 }
 
 variable "port" {
@@ -121,4 +125,15 @@ variable "tags" {
     "project"     = "dt"
     "environment" = "dev"
   }
+}
+
+variable "ci_role_arn" {
+  type        = string
+  description = "ARN of the CI role to assume"
+}
+
+variable "security_group_ids" {
+  type        = set(string)
+  description = "List of security group ids to attach to the neptune cluster"
+  default     = []
 }

@@ -4,8 +4,8 @@
 resource "aws_neptune_parameter_group" "instance" {
   provider    = aws.neptune
   family      = var.parameter_group_family
-  name        = "${local.stack}-${var.name}-instance"
-  description = "neptune instance parameter group (${var.name})"
+  name        = "${local.stack}-instance"
+  description = "Neptune instance parameter group (${var.name})"
 
   parameter {
     name  = "neptune_query_timeout"
