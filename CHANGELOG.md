@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [0.0.6](https://github.com/EKGF/terraform-neptune/compare/0.0.5..0.0.6) - 2023-11-20
+#### Features
+- **(sagemaker)** added sagemaker support - ([1d3e97c](https://github.com/EKGF/terraform-neptune/commit/1d3e97c4a79c7e9d8015e020adea48d2ace739ab)) - [@jgeluk](https://github.com/jgeluk)
+
+- - -
+
 ## [0.0.5](https://github.com/EKGF/terraform-neptune/compare/0.0.4..0.0.5) - 2023-11-19
 #### Miscellaneous Chores
 - **(neptune)** upgrade parameter group `neptune1.3` - ([2a7afa0](https://github.com/EKGF/terraform-neptune/commit/2a7afa0e50b5a6ef11a0c926ff439656ea4aad88)) - [@jgeluk](https://github.com/jgeluk)
