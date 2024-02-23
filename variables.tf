@@ -96,7 +96,7 @@ variable "engine" {
 variable "engine_version" {
   type        = string
   description = "Neptune engine version"
-  default     = "1.2.1.0"
+  default     = "1.3.0.0"
 }
 
 variable "load_buckets" {
@@ -108,7 +108,7 @@ variable "load_buckets" {
 variable "parameter_group_family" {
   type        = string
   description = "Neptune parameter group family"
-  default     = "neptune1.2"
+  default     = "neptune1.3"
 }
 
 variable "port" {
