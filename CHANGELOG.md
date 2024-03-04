@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [0.0.8](https://github.com/EKGF/terraform-aws-neptune/compare/0.0.7..0.0.8) - 2024-03-04
+#### Bug Fixes
+- **(cog)** fixed cog.toml - ([6e9f762](https://github.com/EKGF/terraform-aws-neptune/commit/6e9f7620ff082145b62561f1cd5873d115498b45)) - [@jgeluk](https://github.com/jgeluk)
+#### Features
+- **(sagemaker)** added notebook startup scripts - ([5c1c6ca](https://github.com/EKGF/terraform-aws-neptune/commit/5c1c6cac227dc334464689fb1a2f63547e7b0ed7)) - [@jgeluk](https://github.com/jgeluk)
+
+- - -
+
 ## [0.0.7](https://github.com/EKGF/terraform-neptune/compare/0.0.6..0.0.7) - 2024-02-23
 #### Bug Fixes
 - bump up neptune version - ([65bd18c](https://github.com/EKGF/terraform-neptune/commit/65bd18ce1048a3990e0ff8df700209f612624fcb)) - [@jgeluk](https://github.com/jgeluk)
