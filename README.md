@@ -13,7 +13,7 @@ For instance, in your own project, you can add Neptune support by adding the fol
 ```hcl
 module "neptune_staging" {
   source                   = "EKGF/neptune/aws"
-  version                  = "0.0.3"
+  version                  = "0.0.8"
   name                     = "staging"
   org_short                = var.org_short
   project_short            = var.project_short

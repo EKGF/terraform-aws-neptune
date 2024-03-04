@@ -30,7 +30,7 @@ resource "aws_sagemaker_studio_lifecycle_config" "digital_twin" {
   provider                         = aws.neptune
   studio_lifecycle_config_name     = "${local.stack}-lifecycle-config"
   studio_lifecycle_config_app_type = "JupyterServer"
-  studio_lifecycle_config_content  = filebase64("../files/sagemaker_neptune.sh")
+  studio_lifecycle_config_content  = filebase64("${path.module}/files/sagemaker_neptune.sh")
 
   tags = local.default_tags
 }
@@ -39,7 +39,7 @@ resource "aws_sagemaker_notebook_instance_lifecycle_configuration" "digital_twin
   provider  = aws.neptune
   name      = local.stack # has to be a short name, shorter than 64 characters
   on_create = base64encode("echo foo")
-  on_start  = base64encode(templatefile("../files/graph_notebook_start_script.tftpl", {
+  on_start  = base64encode(templatefile("${path.module}/files/graph_notebook_start_script.tftpl", {
     neptune_cluster_endpoint = local.endpoint,
     neptune_cluster_port     = local.port,
     neptune_role_arn         = aws_iam_role.neptune_role.arn
