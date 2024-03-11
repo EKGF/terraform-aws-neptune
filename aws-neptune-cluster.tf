@@ -30,8 +30,8 @@ resource "aws_neptune_cluster" "cluster" {
   kms_key_arn                          = aws_kms_key.cluster_key.arn
 
   serverless_v2_scaling_configuration {
-    max_capacity = 20.0
-    min_capacity = 16.0
+    max_capacity = 128.0
+    min_capacity = 4.0
   }
 
   timeouts {
