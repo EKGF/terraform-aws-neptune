@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [0.0.10](https://github.com/EKGF/terraform-aws-neptune/compare/0.0.9..0.0.10) - 2024-03-11
+#### Bug Fixes
+- **(neptune)** increased serverless max NCUs - ([12cfc9a](https://github.com/EKGF/terraform-aws-neptune/commit/12cfc9ad87c11031086f5a7c770e2f51cbba84f4)) - [@jgeluk](https://github.com/jgeluk)
+
+- - -
+
 ## [0.0.9](https://github.com/EKGF/terraform-aws-neptune/compare/0.0.8..0.0.9) - 2024-03-04
 #### Miscellaneous Chores
 - bump up terraform and aws versions - ([7711b71](https://github.com/EKGF/terraform-aws-neptune/commit/7711b71d0dbbe6bf0768d449ea5df066667c3ffa)) - [@jgeluk](https://github.com/jgeluk)
